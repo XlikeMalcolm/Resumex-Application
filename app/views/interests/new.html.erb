@@ -1,0 +1,30 @@
+<%= render 'shared/leftside' %>
+<h1>New Interest</h1>
+
+<%= render 'form', interest: @interest %>
+
+<h1>Interests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.interests.each do |interest| %>
+      <tr>
+        <td><%= interest.title %></td>
+        <td><%= interest.description %></td>
+        <td><%= link_to 'Edit', edit_interest_path(interest) %></td>
+        <td><%= link_to 'Destroy', interest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</section>
+<!-- .edit-wrapper -->

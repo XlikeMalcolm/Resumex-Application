@@ -1,0 +1,45 @@
+<%= render 'shared/leftside' %>
+<h1>New Expertise</h1>
+
+<%= form_for (@expertise) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, :placeholder => "Enter Tiltle", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, :placeholder => "Description", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.expertises.each do |expertise| %>
+      <tr>
+        <td><%= expertise.title %></td>
+        <td><%= expertise.description %></td>
+        <td><%= link_to 'Edit', edit_expertise_path(expertise) %></td>
+        <td><%= link_to 'Destroy', expertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</section>
+<!-- .edit-wrapper -->

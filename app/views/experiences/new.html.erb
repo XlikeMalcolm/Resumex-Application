@@ -1,0 +1,36 @@
+<%= render 'shared/leftside' %>
+<h1>New Experience</h1>
+
+<%= render 'form', experience: @experience %>
+
+<h1>Experiences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Duration</th>
+      <th>Job title</th>
+      <th>Comapy</th>
+      <th>City</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.duration %></td>
+        <td><%= experience.job_title %></td>
+        <td><%= experience.company %></td>
+        <td><%= experience.city %></td>
+        <td><%= experience.country %></td>
+        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</section>
+<!-- .edit-wrapper -->

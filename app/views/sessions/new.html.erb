@@ -1,0 +1,26 @@
+<div class="columns-block container">
+
+<div class="right-col-block blocks">
+<div class="theiaStickySidebar">
+<section class="expertise-wrapper section-wrapper gray-bg">
+	<div class="col-md-6 col-md-offset-3">
+
+	<h1>Login</h1>
+	<%= form_for :session, url: login_path do |f| %>
+	  <div class="field">
+	    <%= f.text_field :email, :placeholder => "Email",  class: "form-control" %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.password_field :password, :placeholder => "Password",  class: "form-control" %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Login" %>
+	  </div>
+
+	<% end %>
+<h1>..</h1>
+</div>
+</section>
+<!-- .edit-wrapper -->

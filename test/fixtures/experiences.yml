@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  duration: MyString
+  job_title: MyString
+
+two:
+  duration: MyString
+  job_title: MyString

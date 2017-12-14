@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<section class="section-wrapper portfolio-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Home Page</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <% @users.each do |user| %>
+            <div class="col-md-3">
+                <%=link_to user, class: "portfolio-item" do %>
+                    <div class="portfolio-thumb">
+                        <%= image_tag user.profile_pic %>
+                    </div>
+
+                    <div class="portfolio-info">
+                        <h3><%= user.name %></h3>
+                        <small><%= user.profession %></small>
+                    </div>
+                    <!-- portfolio-info -->
+                <% end %>
+                <!-- .portfolio-item -->
+            </div>
+            <% end %>
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+<!-- .portfolio -->
