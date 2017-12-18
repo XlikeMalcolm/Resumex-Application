@@ -2,15 +2,15 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :expertise_title %>
+    <%= form.text_field :title, id: :expertise_title, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description, id: :expertise_description %>
+    <%= form.trix_editor :description, id: :expertise_description, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

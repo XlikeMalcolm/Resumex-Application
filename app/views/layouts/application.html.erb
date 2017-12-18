@@ -15,12 +15,12 @@
            <div class="col-md-5">
                   <div class="row">
                     <div class="col-lg-12">
-                      <div class="input-group form">
-                           <input type="text" class="form-control" placeholder="Search...">
-                           <span class="input-group-btn">
-                             <button class="btn btn-primary" type="button">Search</button>
-                           </span>
-                      </div>
+                      <%= form_tag users_path, :method => "get" do %>
+                           <%= text_field_tag :search, params[:search], :placeholder => "Search...", class: "form-control" %>
+                           <span>
+                           <%= submit_tag "Search", class: "btn btn-primary" %>
+                            </span>
+                      <% end %>
                     </div>
                   </div>
                </div>

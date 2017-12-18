@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description, :placeholder => "Description", class: "form-control" %>
+    <%= form.trix_editor :description, :placeholder => "Description", class: "form-control" %>
   </div>
 
   <div class="actions">
@@ -33,7 +33,7 @@
     <% current_user.expertises.each do |expertise| %>
       <tr>
         <td><%= expertise.title %></td>
-        <td><%= expertise.description %></td>
+        <td><%= expertise.description.html_safe %></td>
         <td><%= link_to 'Edit', edit_expertise_path(expertise) %></td>
         <td><%= link_to 'Destroy', expertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
