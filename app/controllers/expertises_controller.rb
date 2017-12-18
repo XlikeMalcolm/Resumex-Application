@@ -33,7 +33,7 @@ class ExpertisesController < ApplicationController
   # PATCH/PUT /expertises/1
   def update
       if @expertise.update(expertise_params)
-        redirect_to new, notice: 'Expertise was successfully updated.' 
+        redirect_to new_expertise_path, notice: 'Expertise was successfully updated.' 
       else
         render :edit 
       end
@@ -48,8 +48,7 @@ class ExpertisesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expertise
-      @user = User.find(params[:id])
-      @expertise = @user.expertises.find(params[:id])
+      @expertise = current_user.expertises.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
